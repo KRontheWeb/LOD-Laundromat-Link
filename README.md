@@ -8,7 +8,7 @@ Easy-peasy linking to LOD Laundromat resources.
 
   1. Install [SWI-Prolog development version](http://www.swi-prolog.org/download/devel).
   2. Clone this repository: `$ git clone https://github.com/KRontheWeb/LOD-Laundromat-Link`
-  3. Run install: `$ cd LOD-Laundromat-Link & swipl install.pl`
+  3. Run install: `$ cd LOD-Laundromat-Link` and then `$ swipl install.pl`
 
 
 
@@ -16,7 +16,7 @@ Easy-peasy linking to LOD Laundromat resources.
 
 Use a text string:
 
-```prolog
+```bash
 $ swipl -s run.pl -g "id('Rinke Hoekstra')"
 Looking for identities of Rinke Hoekstra:...
     1. http://dblp.rkbexplorer.com/id/people-db5a10294c79c79f6870731820ebb7e7-9d6c108e488decca14ac7b404d1a3e39
@@ -48,7 +48,7 @@ Done!  Found 23 identities.
 
 Use a full IRI:
 
-```prolog
+```bash
 $ swipl -s run.pl -g "id('http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29ycA')"
 Looking for identities of http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29ycA:
     1. http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29ycA
@@ -72,7 +72,7 @@ Looking for identities of http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29y
 
 Use an IRI with prefix aliases registered by [prefix.cc](http://prefix.cc):
 
-```prolog
+```bash
 $ swipl -s run.pl -g "id(dbr:'Monkey')"
 Looking for identities of http://dbpedia.org/resource/Monkey:
     1. http://dbpedia.org/resource/Monkey
