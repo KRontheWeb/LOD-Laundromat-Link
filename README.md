@@ -12,19 +12,12 @@ Easy-peasy linking to LOD Laundromat resources.
 
 
 
-## Use
-
-  1. Start the program: `$ cd LOD-Laundromat-Link $ swipl run.pl`
-  2. Find identical resources: `?- id(<STRING-OR-IRI>).`
-
-
-
 ## Examples
 
-Use a text string (notice the single quotes):
+Use a text string:
 
 ```prolog
-?- id('Rinke Hoekstra').
+$ swipl -s run.pl -g "id('Rinke Hoekstra')"
 Looking for identities of Rinke Hoekstra:...
     1. http://dblp.rkbexplorer.com/id/people-db5a10294c79c79f6870731820ebb7e7-9d6c108e488decca14ac7b404d1a3e39
     2. http://data.semanticweb.org/person/rinke-hoekstra
@@ -53,10 +46,10 @@ Done!  Found 23 identities.
 ```
 
 
-Use an full IRI (notice the single quotes surrounding the IRI):
+Use a full IRI:
 
 ```prolog
-?- id('http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29ycA').
+$ swipl -s run.pl -g "id('http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29ycA')"
 Looking for identities of http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29ycA:
     1. http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29ycA
     2. http://dbpedia.org/resource/Chuck_Norris
@@ -77,11 +70,10 @@ Looking for identities of http://sw.opencyc.org/concept/Mx4rvbMwNZwpEbGdrcN5Y29y
 ```
 
 
-Use an IRI with prefix aliases registered by [prefix.cc](http://prefix.cc)
-(notice the single quotes surrounding the local name):
+Use an IRI with prefix aliases registered by [prefix.cc](http://prefix.cc):
 
 ```prolog
-?- id(dbr:'Monkey').
+$ swipl -s run.pl -g "id(dbr:'Monkey')"
 Looking for identities of http://dbpedia.org/resource/Monkey:
     1. http://dbpedia.org/resource/Monkey
     2. http://af.dbpedia.org/resource/Aap
