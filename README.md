@@ -1,6 +1,6 @@
 # LOD-Laundromat-Link
 
-Easy-peasy linking to LOD Laundromat resources.
+Easy-peasy linking to [LOD Laundromat](http://lodlaundromat.org) resources.
 
 
 
