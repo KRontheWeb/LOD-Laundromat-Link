@@ -82,5 +82,6 @@ append_directories(Dir1, Dir2, Dir3) :-
 %! name_dir(+Name, -Dir) is det.
 
 name_dir(Name, Dir) :-
-  absolute_file_name(pack(.), Dir0, [file_type(directory)]),
+  absolute_file_name(pack(.), Dir0),
+  make_directory_path(Dir0),
   directory_file_path(Dir0, Name, Dir).
