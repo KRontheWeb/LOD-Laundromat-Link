@@ -1,5 +1,6 @@
 :- use_module(library(lodapi/lodapi_deref)).
 :- use_module(library(rdf/rdf_prefix), []).
+:- use_module(library(rdf/rdf_print)).
 :- use_module(library(semweb/rdf11)).
 
 id(X0) :-
@@ -15,3 +16,12 @@ id(_) :-
   N is N0 - 1,
   format("Done!  Found ~D identities.~n", [N]),
   halt.
+
+
+
+cbd(X0) :-
+  rdf_global_id(X0, X),
+  ldf_cbd(X, Quad),
+  rdf_print_quad(Quad),
+  fail.
+cbd(_).
