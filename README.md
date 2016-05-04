@@ -11,10 +11,17 @@ Easy-peasy linking to [LOD Laundromat](http://lodlaundromat.org) resources.
   3. Run install: `$ cd LOD-Laundromat-Link` and then `$ swipl install.pl`
 
 
+# Use
+
+  - `$ swipl -s run.pl -g "id(<SEARCH>)"` enumerates identities for `<SEARCH>`, which is either a search string, a full IRI or an abbreviated IRI.
+  - `$ swipl -s run.pl -g "cbd(<SEARCH>)"` enumerates the [Concise Bounded Description (CBD)](https://www.w3.org/Submission/CBD/) of `<SEARCH>`.  Each statement in the CBD consists of a subject, predicate, object and graph term.  The graph term denotes a LOD Laundromat document.
+
 
 ## Examples
 
-Use a text string:
+### Identities
+
+Use a search string:
 
 ```bash
 $ swipl -s run.pl -g "id('Rinke Hoekstra')"
@@ -91,4 +98,30 @@ Looking for identities of http://dbpedia.org/resource/Monkey:
     14. http://www.wikidata.org/entity/Q1367
     15. http://cs.dbpedia.org/resource/Opice
 	...
+```
+
+
+## Concise Bounded Description (CBD)
+
+Statements describing Stefan Schlobach:
+
+```bash
+$ swipl -s run.pl -g "cbd('Stefan Schlobach')"
+swid:Stefan_Schlobach rdfs:isDefinedBy <http://semanticweb.org/wiki/Special:ExportRDF/Stefan_Schlobach> llr:262fdef16bf0899ad7e98593cdbb809b .
+swid:Stefan_Schlobach rdfs:label "Stefan Schlobach" llr:262fdef16bf0899ad7e98593cdbb809b .
+swid:Stefan_Schlobach swivt:page <http://semanticweb.org/wiki/Stefan_Schlobach> llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach swid:Property-3AAffiliation swid:Vrije_Universiteit_Amsterdam llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach swid:Property-3AMember_of swid:Vrije_Universiteit_Amsterdam llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach swid:Property-3AParticipant_of swid:ESWC2006 llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach swid:Property-3AWorks_at swid:SEKT llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach swid:Property-3AWorks_at swid:Vrije_Universiteit_Amsterdam llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach a swid:Category-3ASWIG llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach a swivt:Subject llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach a foaf:Person llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach rdfs:isDefinedBy <http://semanticweb.org/wiki/Special:ExportRDF/Stefan_Schlobach> llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach rdfs:label "Stefan Schlobach" llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach foaf:homepage <http://www.few.vu.nl/~schlobac/> llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach foaf:name "Stefan Schlobach" llr:2642254ff835bbae48848958a7a9a19f .
+swid:Stefan_Schlobach foaf:phone "(+31) - 20 - 598 7678" llr:2642254ff835bbae48848958a7a9a19f .
+...
 ```
